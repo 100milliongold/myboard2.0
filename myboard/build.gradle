@@ -1,0 +1,72 @@
+apply plugin: 'java'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+version = '1.0'
+war {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Quickstart',
+                   'Implementation-Version': version
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+/* spirng 권고안:commons-logging을 빼라->컴파일할때 commons-logging을 제거 */
+[configurations.runtime,
+configurations.default]*.exclude(module:'commons-logging')
+
+dependencies {
+	/* 코어 */
+	compile group: 'org.springframework', name: 'spring-context', version: '4.3.9.RELEASE'
+	compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.9.RELEASE'
+	compile group: 'org.springframework', name: 'spring-jdbc', version: '4.3.9.RELEASE'
+	
+	/* 디비 */
+	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.42'
+	compile group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.1.1'
+	compile group: 'org.mybatis', name: 'mybatis', version: '3.4.4'
+	compile group: 'org.mybatis', name: 'mybatis-spring', version: '1.3.1'
+	
+	/* 로거+디비 */
+	compile group: 'org.lazyluke', name: 'log4jdbc-remix', version: '0.2.7'
+	
+	
+	
+	/* 로거 */
+	compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+	compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.7.25'
+	
+	/* AOP */
+	compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.8.10'
+	
+	/* 배열체크 */
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.6'
+	
+	/* 시큐리티 사용 */
+	compile group: 'org.springframework.security', name: 'spring-security-core', version: '4.2.3.RELEASE'
+	
+	
+	providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+	providedCompile group: 'javax.servlet.jsp', name: 'javax.servlet.jsp-api', version: '2.3.1'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.9'
+
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+project.webAppDirName = 'webapp'
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
