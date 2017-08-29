@@ -14,8 +14,15 @@
 		INSERT INTO authority
 			(m_id , authority)
 		VALUE
-			<foreach item="authority" index="index" collection="authorities" separator=",">
-                (#{m_id}, #{authority})
-            </foreach>
+			<foreach item="authority" index="index" collection="authorities"
+				separator=",">
+				(#{mId}, #{authority})
+			</foreach>
 	</insert>
+	
+	<select id="getMember" parameterType="string" resultType="MemberVO">
+		SELECT *
+		FROM member 
+		WHERE m_id = #{mId}
+	</select>
 </mapper>

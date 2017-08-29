@@ -23,6 +23,11 @@ public class MemberDAO {
 	public void createAuthority(MemberVO member) {
 		sqlSession.insert("member.createAuthority",member);
 	}
+
+	public MemberVO getMember(String mId) {
+		// TODO 자동 생성된 메소드 스텁
+		return sqlSession.selectOne("member.getMember",mId);
+	}
 	
 	
 }

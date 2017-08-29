@@ -34,7 +34,7 @@ public class MemberController {
 	}
 	
 	//로그인
-	@RequestMapping(value="/login",produces = {"application/json;charset=UTF-8"},method={RequestMethod.PUT})
+	@RequestMapping(value="/login",produces = {"application/json;charset=UTF-8"},method={RequestMethod.POST})
 	@ResponseBody
 	public Map<String, String> login(@RequestBody MemberVO login){
 		

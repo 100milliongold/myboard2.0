@@ -3,6 +3,8 @@ package com.myboard.spring.core.service.member;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,8 @@ import com.myboard.spring.core.vo.member.MemberVO;
 public class MemberService {
 	
 	BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+	private static final Logger LOGGER = LoggerFactory.getLogger(MemberService.class);
+	
 	
 	@Autowired
 	private MemberDAO memberDAO;
@@ -27,16 +31,15 @@ public class MemberService {
 		member.setmPassword(encodedPassword);
 		
 		List<String> mList = new ArrayList<String>();
-        mList.add("USER");
-        member.setAuthorities(mList);
+		mList.add("USER");
+		member.setAuthorities(mList);
 
 		memberDAO.register(member);
 		memberDAO.createAuthority(member);
 	}
 
 	public MemberVO getMember(MemberVO login) {
-		// TODO 자동 생성된 메소드 스텁
-		return null;
+		return memberDAO.getMember(login.getmId());
 	}
 
 	
