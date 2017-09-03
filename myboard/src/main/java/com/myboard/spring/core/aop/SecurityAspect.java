@@ -9,6 +9,8 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -20,7 +22,8 @@ import com.myboard.spring.core.annotation.SigninRequired;
 @Order(20) // AOP 적용 순위 20
 @Component // 빈 자동 등록
 public class SecurityAspect {
-
+	private static final Logger LOGGER = LoggerFactory.getLogger(SecurityAspect.class);
+	
 	@Around("@annotation(com.myboard.spring.core.annotation.SigninRequired)")
 	public Object checkSignIn(ProceedingJoinPoint pjp) throws Throwable{
 		
@@ -34,6 +37,7 @@ public class SecurityAspect {
 		MethodSignature signature = (MethodSignature) pjp.getSignature();
 		Class returnType = signature.getReturnType();
 		
+		// 세션에서 로그인여부 체크
 		HttpSession session = req.getSession();
 		Boolean isLogin = (Boolean) session.getAttribute("isLogin");
 		
@@ -42,10 +46,16 @@ public class SecurityAspect {
 		}else{ //로그인시 권한체크
 			SigninRequired signinRequired = signature.getMethod().getAnnotation(SigninRequired.class);
 			String[] roles = signinRequired.value();
-			String role = (String) session.getAttribute("role");
+			String[] role = (String[]) session.getAttribute("role");
 			
 			//권한이 없거나 일치하는게 없을때
-			if(roles.length > 0 && !ArrayUtils.contains(roles, role)){
+			boolean isAuth = false;
+			for (int i = 0; i < role.length; i++) {
+				if(ArrayUtils.contains(roles, role[i])){
+					isAuth = true; break;
+				}
+			}
+			if(roles.length > 0 && !isAuth){
 				throw new SecurityException("권한이 없습니다.");
 			}
 		}

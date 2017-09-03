@@ -1,5 +1,7 @@
 package com.myboard.spring.core.dao.member;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +29,11 @@ public class MemberDAO {
 	public MemberVO getMember(String mId) {
 		// TODO 자동 생성된 메소드 스텁
 		return sqlSession.selectOne("member.getMember",mId);
+	}
+
+	public List<String> getAuthorities(MemberVO member) {
+		// TODO 자동 생성된 메소드 스텁
+		return sqlSession.selectList("member.getAuthorities",member);
 	}
 	
 	

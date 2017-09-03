@@ -63,7 +63,7 @@ public class ExceptionAspect {
 				String json = mapper.writeValueAsString(error);
 				byte[] bytes = json.getBytes("UTF-8");
 				
-				res.setStatus(2500);
+				res.setStatus(406);
 				res.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
 				res.setContentLength(bytes.length);
 				res.getOutputStream().write(bytes);

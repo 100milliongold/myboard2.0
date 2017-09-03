@@ -25,4 +25,10 @@
 		FROM member 
 		WHERE m_id = #{mId}
 	</select>
+	
+	<select id="getAuthorities" resultType="string">
+		SELECT authority
+		FROM authority
+		WHERE m_id = #{mId}
+	</select>
 </mapper>

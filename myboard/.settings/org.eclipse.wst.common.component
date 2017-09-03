@@ -5,85 +5,85 @@
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/resources"/>
 		<wb-resource deploy-path="/WEB-INF/classes" source-path="src/main/java"/>
 		<wb-resource deploy-path="/" source-path="webapp"/>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.3.9.RELEASE/a186823724f03b98becd5f93b1fa107fe6f7a7ff/spring-context-4.3.9.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.3.9.RELEASE/a186823724f03b98becd5f93b1fa107fe6f7a7ff/spring-context-4.3.9.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.3.9.RELEASE/ca80b4a00abc388d8046bf372099f35564371c47/spring-webmvc-4.3.9.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/4.3.9.RELEASE/ca80b4a00abc388d8046bf372099f35564371c47/spring-webmvc-4.3.9.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.3.9.RELEASE/ef8476b954a4211a21147b3ae15996443a76c6f8/spring-jdbc-4.3.9.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/4.3.9.RELEASE/ef8476b954a4211a21147b3ae15996443a76c6f8/spring-jdbc-4.3.9.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.42/80a448a3ec2178b649bb2e3cb3610fab06e11669/mysql-connector-java-5.1.42.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.42/80a448a3ec2178b649bb2e3cb3610fab06e11669/mysql-connector-java-5.1.42.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-dbcp2/2.1.1/c4f4a76171671ccf293be8995a498eab7fa8ed24/commons-dbcp2-2.1.1.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-dbcp2/2.1.1/c4f4a76171671ccf293be8995a498eab7fa8ed24/commons-dbcp2-2.1.1.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis/3.4.4/31f6ee836efc0a69e07d44f71deb0b0b4fd0f0c4/mybatis-3.4.4.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis/3.4.4/31f6ee836efc0a69e07d44f71deb0b0b4fd0f0c4/mybatis-3.4.4.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis-spring/1.3.1/5197169e15a43066f177a1cd12a098e1283fdc76/mybatis-spring-1.3.1.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis-spring/1.3.1/5197169e15a43066f177a1cd12a098e1283fdc76/mybatis-spring-1.3.1.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.lazyluke/log4jdbc-remix/0.2.7/3125bf52887910bbcd52dcebf8c443640f3ff709/log4jdbc-remix-0.2.7.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.lazyluke/log4jdbc-remix/0.2.7/3125bf52887910bbcd52dcebf8c443640f3ff709/log4jdbc-remix-0.2.7.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.25/110cefe2df103412849d72ef7a67e4e91e4266b4/slf4j-log4j12-1.7.25.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.25/110cefe2df103412849d72ef7a67e4e91e4266b4/slf4j-log4j12-1.7.25.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.25/f8c32b13ff142a513eeb5b6330b1588dcb2c0461/jcl-over-slf4j-1.7.25.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.7.25/f8c32b13ff142a513eeb5b6330b1588dcb2c0461/jcl-over-slf4j-1.7.25.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.aspectj/aspectjweaver/1.8.10/e198c5fee28988c355f74e06461614eae36b2032/aspectjweaver-1.8.10.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.aspectj/aspectjweaver/1.8.10/e198c5fee28988c355f74e06461614eae36b2032/aspectjweaver-1.8.10.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.6/9d28a6b23650e8a7e9063c04588ace6cf7012c17/commons-lang3-3.6.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.6/9d28a6b23650e8a7e9063c04588ace6cf7012c17/commons-lang3-3.6.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/4.2.3.RELEASE/5c0e47a47036c94d6fdd02696bf52be6d1adbd4d/spring-security-core-4.2.3.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/4.2.3.RELEASE/5c0e47a47036c94d6fdd02696bf52be6d1adbd4d/spring-security-core-4.2.3.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.8.9/4dfca3975be3c1a98eacb829e70f02e9a71bc159/jackson-databind-2.8.9.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.8.9/4dfca3975be3c1a98eacb829e70f02e9a71bc159/jackson-databind-2.8.9.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.3.9.RELEASE/95f5f5cf3cae64266a89dc1bc9e0484425cd8358/spring-aop-4.3.9.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.3.9.RELEASE/95f5f5cf3cae64266a89dc1bc9e0484425cd8358/spring-aop-4.3.9.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.3.9.RELEASE/daa5abf3779c8cad1a2910e1ea08e4272489d8ae/spring-beans-4.3.9.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.3.9.RELEASE/daa5abf3779c8cad1a2910e1ea08e4272489d8ae/spring-beans-4.3.9.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.9.RELEASE/430b7298bfb85d66fb61e19ca8f06231b911e9f5/spring-core-4.3.9.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.3.9.RELEASE/430b7298bfb85d66fb61e19ca8f06231b911e9f5/spring-core-4.3.9.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.3.9.RELEASE/4edca6913da9e62a6586714e053e01a61952a153/spring-expression-4.3.9.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.3.9.RELEASE/4edca6913da9e62a6586714e053e01a61952a153/spring-expression-4.3.9.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.3.9.RELEASE/91dae64c4280093ad5fb4736a10913c9233479c1/spring-web-4.3.9.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.3.9.RELEASE/91dae64c4280093ad5fb4736a10913c9233479c1/spring-web-4.3.9.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/4.3.9.RELEASE/7a7b1775e1e604841f8b619e110e43d9929c37ab/spring-tx-4.3.9.RELEASE.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/4.3.9.RELEASE/7a7b1775e1e604841f8b619e110e43d9929c37ab/spring-tx-4.3.9.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-pool2/2.4.2/e5f4f28f19d57716fbc3989d7a357ebf1e454fea/commons-pool2-2.4.2.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-pool2/2.4.2/e5f4f28f19d57716fbc3989d7a357ebf1e454fea/commons-pool2-2.4.2.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/junit/junit/4.7/d9444742a5b897c6280724a49f57a8155517d21f/junit-4.7.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/junit/junit/4.7/d9444742a5b897c6280724a49f57a8155517d21f/junit-4.7.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.17/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.2.17.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.8.0/45b426f7796b741035581a176744d91090e2e6fb/jackson-annotations-2.8.0.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.8.0/45b426f7796b741035581a176744d91090e2e6fb/jackson-annotations-2.8.0.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.8.9/569b1752705da98f49aabe2911cc956ff7d8ed9d/jackson-core-2.8.9.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.8.9/569b1752705da98f49aabe2911cc956ff7d8ed9d/jackson-core-2.8.9.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib//home/atcis/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/atcis/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
 	</wb-module>
