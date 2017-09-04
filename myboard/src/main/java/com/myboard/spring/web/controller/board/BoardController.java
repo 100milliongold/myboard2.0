@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,12 +32,16 @@ public class BoardController {
 	// 리스트
 	@RequestMapping(value="/{board_table}",method={RequestMethod.GET})
 	@ResponseBody
-	public List<BoardVO> list(@PathVariable("board_table") String board_table) {
+	public Map<String, Object> list(@PathVariable("board_table") String board_table) {
 		
 		BoardConfigVO boardconfig = boardConfigService.viewBoardConfig(board_table);
 		if(boardconfig == null) return null;
 		
-		return boardService.getList(boardconfig);
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("result", boardService.getList(boardconfig));
+		result.put("status", true);
+		
+		return result;
 	}
 	
 	
@@ -57,18 +63,28 @@ public class BoardController {
 	//글보기
 	@RequestMapping(value="/{board_table}/{bNo}",method={RequestMethod.GET})
 	@ResponseBody
-	public BoardVO view(@PathVariable("board_table") String board_table,@PathVariable("bNo") String bNo) {
+	public Map<String, Object> view(@PathVariable("board_table") String board_table,@PathVariable("bNo") String bNo) {
 		
 		BoardConfigVO boardconfig = boardConfigService.viewBoardConfig(board_table);
 		if(boardconfig == null) return null;
 		
-		return boardService.getView(boardconfig,bNo);
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("result", boardService.getView(boardconfig,bNo));
+		result.put("status", true);
+		
+		return result;
 	}
 	
 	//글수정
+	@SigninRequired("USER")
 	@RequestMapping(value="/{board_table}/{bNo}",method={RequestMethod.PATCH})
 	@ResponseBody
-	public Map<String, Object> modify(@RequestBody BoardVO boardVO,@PathVariable("board_table") String board_table,@PathVariable("bNo") String bNo){
+	public Map<String, Object> modify(
+			@RequestBody BoardVO boardVO
+			,@PathVariable("board_table") String board_table
+			,@PathVariable("bNo") String bNo
+			,HttpSession session
+			) throws Exception{
 		
 		BoardConfigVO boardconfig = boardConfigService.viewBoardConfig(board_table);
 		if(boardconfig == null) return null;

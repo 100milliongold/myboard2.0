@@ -56,14 +56,15 @@ public class ExceptionAspect {
 				req.setAttribute("error", e.getMessage());
 				return "error";
 			}else{
-				Map error = new HashMap();
+				Map<String, Object> error = new HashMap<String, Object>();
 				error.put("error", e.getMessage());
+				error.put("status",false);
 				
 				ObjectMapper mapper = new ObjectMapper();
 				String json = mapper.writeValueAsString(error);
 				byte[] bytes = json.getBytes("UTF-8");
 				
-				res.setStatus(406);
+				res.setStatus(500);
 				res.setContentType(MediaType.APPLICATION_JSON_UTF8_VALUE);
 				res.setContentLength(bytes.length);
 				res.getOutputStream().write(bytes);
