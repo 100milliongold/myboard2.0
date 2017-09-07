@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.myboard.spring.core.annotation.SigninRequired;
 import com.myboard.spring.core.service.board.BoardConfigService;
 import com.myboard.spring.core.service.board.BoardService;
+import com.myboard.spring.core.service.member.MemberService;
 import com.myboard.spring.core.vo.board.BoardConfigVO;
 import com.myboard.spring.core.vo.board.BoardVO;
+import com.myboard.spring.core.vo.member.MemberVO;
 
 @Controller
 @RequestMapping("/board")
@@ -28,6 +30,8 @@ public class BoardController {
 	private BoardService boardService;
 	@Autowired
 	private BoardConfigService boardConfigService;
+	@Autowired
+	private MemberService memberService;
 	
 	// 리스트
 	@RequestMapping(value="/{board_table}",method={RequestMethod.GET})
@@ -49,11 +53,14 @@ public class BoardController {
 	@SigninRequired("USER")
 	@RequestMapping(value="/{board_table}",produces = {"application/json;charset=UTF-8"},method={RequestMethod.PUT})
 	@ResponseBody
-	public Map<String, Object> write(@RequestBody BoardVO boardVO,@PathVariable("board_table") String board_table){
+	public Map<String, Object> write(@RequestBody BoardVO boardVO,@PathVariable("board_table") String board_table , HttpSession session) throws Exception{
 		BoardConfigVO boardconfig = boardConfigService.viewBoardConfig(board_table);
 		if(boardconfig == null) return null;
 		
-		boardService.addBoard(boardconfig,boardVO);
+		
+		MemberVO member = memberService.getMember((String) session.getAttribute("mId"));
+		
+		boardService.addBoard(boardconfig,boardVO,member);
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("status", true);
 				
@@ -89,7 +96,10 @@ public class BoardController {
 		BoardConfigVO boardconfig = boardConfigService.viewBoardConfig(board_table);
 		if(boardconfig == null) return null;
 		
-		boardService.modifyBoard(boardconfig,bNo,boardVO);
+		MemberVO member = memberService.getMember((String) session.getAttribute("mId"));
+		
+		
+		boardService.modifyBoard(boardconfig,bNo,boardVO,member);
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("status", true);
@@ -98,6 +108,7 @@ public class BoardController {
 	}
 	
 	//글삭제
+	@SigninRequired("USER")
 	@RequestMapping(value="/{board_table}/{bNo}",method={RequestMethod.DELETE})
 	@ResponseBody
 	public Map<String, Object> delete(@PathVariable("board_table") String board_table,@PathVariable("bNo") String bNo){

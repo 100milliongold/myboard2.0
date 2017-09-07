@@ -7,6 +7,7 @@ public class BoardVO {
 	private String bContent;
 	private int  bViews;
 	private String bRegistdate;
+	private String mId; // 로그인한 회원정보
 	
 	public int getbNo() {
 		return bNo;
@@ -37,5 +38,11 @@ public class BoardVO {
 	}
 	public void setbRegistdate(String bRegistdate) {
 		this.bRegistdate = bRegistdate;
+	}
+	public String getmId() {
+		return mId;
+	}
+	public void setmId(String mId) {
+		this.mId = mId;
 	}
 }

@@ -44,12 +44,12 @@ public class MemberService {
 
 	/**
 	 * 회원정보 읽어오기
-	 * @param login
+	 * @param id
 	 * @return
 	 */
-	public MemberVO getMember(MemberVO login) {
+	public MemberVO getMember(String mId) {
 		//회원기본정보
-		MemberVO member = memberDAO.getMember(login.getmId());
+		MemberVO member = memberDAO.getMember(mId);
 		//회원권한
 		member.setAuthorities(memberDAO.getAuthorities(member));
 		return member;
@@ -65,7 +65,7 @@ public class MemberService {
 			return false;
 		}
 		
-		MemberVO member = getMember(login);
+		MemberVO member = getMember(login.getmId());
 		boolean isAuthoritie = false;
 		
 		if(member != null && member.getmId().equals(login.getmId()) && new BCryptPasswordEncoder().matches(login.getmPassword(), member.getmPassword())){

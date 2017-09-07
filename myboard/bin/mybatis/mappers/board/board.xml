@@ -11,9 +11,9 @@
 	
 	<insert id="insertBoard" parameterType="hashmap">
 		INSERT INTO tbl_${boardconfig.boardTable}
-  			(b_subject,b_content,b_registdate)
+  			(b_subject,b_content,b_registdate,m_id)
   		VALUE
-  			(#{board.bSubject},#{board.bContent},NOW())
+  			(#{board.bSubject},#{board.bContent},NOW(),#{member.mId})
 	</insert>
 	
 	<select id="getView" parameterType="hashmap" resultType="BoardVO" >

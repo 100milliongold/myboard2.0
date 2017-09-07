@@ -30,12 +30,12 @@ public class MemberController {
 	//회원가입
 	@RequestMapping(value="/register",produces = {"application/json;charset=UTF-8"},method={RequestMethod.PUT})
 	@ResponseBody
-	public Map<String, String> register(@RequestBody MemberVO member){
+	public Map<String, Object> register(@RequestBody MemberVO member){
 		
 		memberService.register(member);
 		
-		Map<String, String> result = new HashMap<String, String>();
-		result.put("status", "OK");
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("status", true);
 				
 		return result;
 	}
@@ -47,7 +47,7 @@ public class MemberController {
 		
 		boolean isAuthoritie = memberService.isAuthoritie(login);
 		if(isAuthoritie){
-			MemberVO memberVO = memberService.getMember(login);
+			MemberVO memberVO = memberService.getMember(login.getmId());
 			session.setAttribute("isLogin", true);
 			session.setAttribute("mId", memberVO.getmId());
 			session.setAttribute("role", memberVO.getAuthorities().toArray(new String[memberVO.getAuthorities().size()]));
@@ -65,6 +65,16 @@ public class MemberController {
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("status", true);
 				
+		return result;
+	}
+	
+	//로그아웃
+	@RequestMapping(value="/logout",method={RequestMethod.GET})
+	@ResponseBody
+	public Map<String, Object> logout(HttpSession session){
+		Map<String, Object> result = new HashMap<String, Object>();
+		session.invalidate();
+		result.put("status", true);
 		return result;
 	}
 }

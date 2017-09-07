@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.myboard.spring.core.aop.ExceptionAspect;
 import com.myboard.spring.core.vo.board.BoardConfigVO;
 import com.myboard.spring.core.vo.board.BoardVO;
+import com.myboard.spring.core.vo.member.MemberVO;
 
 @Repository
 public class BoardDAO {
@@ -29,10 +30,11 @@ public class BoardDAO {
 		return sqlSession.selectList("board.selectList",map);
 	}
 
-	public void addBoard(BoardConfigVO boardconfig, BoardVO boardVO) {
+	public void addBoard(BoardConfigVO boardconfig, BoardVO boardVO, MemberVO member) {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		map.put("boardconfig", boardconfig); //게시판설정 삽입
 		map.put("board", boardVO); //게시판내용 삽입
+		map.put("member", member); // 로그인한 사용자 입력
 		
 		sqlSession.insert("board.insertBoard",map);
 	}
