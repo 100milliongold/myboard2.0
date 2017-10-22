@@ -6,4 +6,8 @@
 	<select id="viewBoardConfig" parameterType="String" resultType="BoardConfigVO" >
 		select * from board_config where board_table = #{board_table}
 	</select>
+	
+	<select id="getBoardList" resultType="BoardConfigVO">
+		SELECT `board_table`,`title` FROM board_config
+	</select>
 </mapper>

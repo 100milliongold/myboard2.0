@@ -22,9 +22,13 @@
 	<mvc:resources location="/static/" mapping="/static/**/*" />
 	
 	<!-- 스프링이 요청을 받을때 뷰으로 넘어갈때 사용한다. -->
-	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
-		<property name="prefix" value="/WEB-INF/view/" /> <!-- 뷰파일 경로 -->
+	<!-- <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+		<property name="prefix" value="/WEB-INF/view/" /> 뷰파일 경로
 		<property name="suffix" value=".jsp" />
+	</bean> -->
+	<bean class="com.github.jknack.handlebars.springmvc.HandlebarsViewResolver">
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".html" />
 	</bean>
 
 </beans>

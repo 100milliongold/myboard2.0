@@ -1,5 +1,7 @@
 package com.myboard.spring.core.dao.board;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -17,6 +19,10 @@ public class BoardConfigDAO {
 		if(board_table == null)return null;
 		return sqlSession.selectOne("boardconfig.viewBoardConfig", board_table);
 		
+	}
+
+	public List<BoardConfigVO> getBoardList() {
+		return sqlSession.selectList("boardconfig.getBoardList");
 	}
 
 }

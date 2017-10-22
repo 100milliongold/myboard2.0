@@ -1,5 +1,7 @@
 package com.myboard.spring.core.service.board;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +16,9 @@ public class BoardConfigService {
 	
 	public BoardConfigVO viewBoardConfig(String board_table){
 		return boardConfigDAO.viewBoardConfig(board_table);
+	}
+
+	public List<BoardConfigVO> getBoardList() {
+		return boardConfigDAO.getBoardList();
 	}
 }
