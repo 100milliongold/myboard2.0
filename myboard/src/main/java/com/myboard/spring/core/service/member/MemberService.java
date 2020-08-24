@@ -14,29 +14,28 @@ import com.myboard.spring.core.vo.member.MemberVO;
 
 @Service
 public class MemberService {
-	
+
 	BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 	private static final Logger LOGGER = LoggerFactory.getLogger(MemberService.class);
-	
-	
+
 	@Autowired
 	private MemberDAO memberDAO;
 
 	/**
 	 * 회원가입
+	 * 
 	 * @param member
 	 */
 	public void register(MemberVO member) {
-		if(member.getmId() == null || member.getmPassword() == null || member.getmName() == null){
+		if (member.getMId() == null || member.getMPassword() == null || member.getMId() == null) {
 			return;
 		}
-		String rawPassword = member.getmPassword();
+		String rawPassword = member.getMPassword();
 		String encodedPassword = new BCryptPasswordEncoder().encode(rawPassword);
-		member.setmPassword(encodedPassword);
-		
+		member.setMPassword(encodedPassword);
+
 		List<String> mList = new ArrayList<String>();
 		mList.add("USER");
-		member.setAuthorities(mList);
 
 		memberDAO.register(member);
 		memberDAO.createAuthority(member);
@@ -44,38 +43,39 @@ public class MemberService {
 
 	/**
 	 * 회원정보 읽어오기
+	 * 
 	 * @param id
 	 * @return
 	 */
 	public MemberVO getMember(String mId) {
-		//회원기본정보
+		// 회원기본정보
 		MemberVO member = memberDAO.getMember(mId);
-		//회원권한
-		member.setAuthorities(memberDAO.getAuthorities(member));
+
 		return member;
 	}
 
 	/**
 	 * 아이디 패스워드 비교
+	 * 
 	 * @param login
 	 * @return
 	 */
 	public boolean isAuthoritie(MemberVO login) {
-		if(login == null || login.getmId() == null || login.getmPassword() == null){
+		if (login == null || login.getMId() == null || login.getMPassword() == null) {
 			return false;
 		}
-		
-		MemberVO member = getMember(login.getmId());
+
+		MemberVO member = getMember(login.getMId());
 		boolean isAuthoritie = false;
-		
-		if(member != null && member.getmId().equals(login.getmId()) && new BCryptPasswordEncoder().matches(login.getmPassword(), member.getmPassword())){
+
+		if (member != null && member.getMId().equals(login.getMId())
+				&& new BCryptPasswordEncoder().matches(login.getMPassword(), member.getMPassword())) {
 			isAuthoritie = true;
-		}else{
+		} else {
 			isAuthoritie = false;
 		}
-		
+
 		return isAuthoritie;
 	}
 
-	
 }

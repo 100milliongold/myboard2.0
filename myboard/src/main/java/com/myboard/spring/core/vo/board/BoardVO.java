@@ -1,48 +1,36 @@
 package com.myboard.spring.core.vo.board;
 
-public class BoardVO {
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
-	private int bNo;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Date;
+
+import javax.persistence.*;
+
+@Entity
+@Getter
+@Setter
+public class BoardVO {
+	private static final String KOREA_TIME_ZONE = "Asia/Seoul";
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long bNo;
+
 	private String bSubject;
 	private String bContent;
-	private int  bViews;
-	private String bRegistdate;
-	private String mId; // 로그인한 회원정보
-	
-	public int getbNo() {
-		return bNo;
-	}
-	public void setbNo(int bNo) {
-		this.bNo = bNo;
-	}
-	public String getbSubject() {
-		return bSubject;
-	}
-	public void setbSubject(String bSubject) {
-		this.bSubject = bSubject;
-	}
-	public String getbContent() {
-		return bContent;
-	}
-	public void setbContent(String bContent) {
-		this.bContent = bContent;
-	}
-	public int getbViews() {
-		return bViews;
-	}
-	public void setbViews(int bViews) {
-		this.bViews = bViews;
-	}
-	public String getbRegistdate() {
-		return bRegistdate;
-	}
-	public void setbRegistdate(String bRegistdate) {
-		this.bRegistdate = bRegistdate;
-	}
-	public String getmId() {
-		return mId;
-	}
-	public void setmId(String mId) {
-		this.mId = mId;
-	}
+	private Integer bViews;
+	// 생성일자
+	@CreationTimestamp
+	@Temporal(TemporalType.TIMESTAMP)
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = KOREA_TIME_ZONE)
+	private Date bRegistdate;
+
+	private Long mNum; // 로그인한 회원정보
+
 }

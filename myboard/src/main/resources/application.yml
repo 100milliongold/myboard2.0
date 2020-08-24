@@ -1,0 +1,22 @@
+mariaDB4j:
+    databaseName: myboard
+    port: 3306
+
+server:
+    port: 8080
+
+spring:
+    main:
+        allow-bean-definition-overriding: true
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        properties:
+            hibernate.hbm2ddl.auto: create
+        hibernate:
+            ddl-auto: true
+    
+    datasource:
+        driver-class-name: org.mariadb.jdbc.Driver
+        url: jdbc:mariadb://localhost:3306/myboard?useUnicode=yes&characterEncoding=UTF-8
+        username: root
+        password: slalYlqkf!!!

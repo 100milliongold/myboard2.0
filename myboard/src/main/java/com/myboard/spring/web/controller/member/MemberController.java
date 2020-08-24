@@ -21,57 +21,55 @@ import com.myboard.spring.core.vo.member.MemberVO;
 @Controller
 @RequestMapping("/member")
 public class MemberController {
-	
+
 	@Autowired
 	private MemberService memberService;
-	
+
 	private static final Logger LOGGER = LoggerFactory.getLogger(MemberController.class);
-	
-	//회원가입
-	@RequestMapping(value="/register",produces = {"application/json;charset=UTF-8"},method={RequestMethod.PUT})
+
+	// 회원가입
+	@RequestMapping(value = "/register", produces = { "application/json;charset=UTF-8" }, method = {
+			RequestMethod.PUT })
 	@ResponseBody
-	public Map<String, Object> register(@RequestBody MemberVO member){
-		
+	public Map<String, Object> register(@RequestBody MemberVO member) {
+
 		memberService.register(member);
-		
+
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("status", true);
-				
+
 		return result;
 	}
-	
-	//로그인
-	@RequestMapping(value="/login",produces = {"application/json;charset=UTF-8"},method={RequestMethod.POST})
+
+	// 로그인
+	@RequestMapping(value = "/login", produces = { "application/json;charset=UTF-8" }, method = { RequestMethod.POST })
 	@ResponseBody
-	public Map<String, Object> login(@RequestBody MemberVO login,HttpSession session){
-		
+	public Map<String, Object> login(@RequestBody MemberVO login, HttpSession session) {
+
 		boolean isAuthoritie = memberService.isAuthoritie(login);
-		if(isAuthoritie){
-			MemberVO memberVO = memberService.getMember(login.getmId());
+		if (isAuthoritie) {
+			MemberVO memberVO = memberService.getMember(login.getMId());
 			session.setAttribute("isLogin", true);
-			session.setAttribute("mId", memberVO.getmId());
-			session.setAttribute("role", memberVO.getAuthorities().toArray(new String[memberVO.getAuthorities().size()]));
-			
-//			List<String> authlist = memberVO.getAuthorities();
-//			for ( String auth : authlist) {
-//				LOGGER.debug("authlist :"+auth);
-//			}
-		}else{
+			session.setAttribute("mId", memberVO.getMId());
+
+			// List<String> authlist = memberVO.getAuthorities();
+			// for ( String auth : authlist) {
+			// LOGGER.debug("authlist :"+auth);
+			// }
+		} else {
 			throw new SecurityException("로그인 실패");
 		}
-		
-		
-		
+
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("status", true);
-				
+
 		return result;
 	}
-	
-	//로그아웃
-	@RequestMapping(value="/logout",method={RequestMethod.GET})
+
+	// 로그아웃
+	@RequestMapping(value = "/logout", method = { RequestMethod.GET })
 	@ResponseBody
-	public Map<String, Object> logout(HttpSession session){
+	public Map<String, Object> logout(HttpSession session) {
 		Map<String, Object> result = new HashMap<String, Object>();
 		session.invalidate();
 		result.put("status", true);

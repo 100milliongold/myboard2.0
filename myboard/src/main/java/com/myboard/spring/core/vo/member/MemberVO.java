@@ -1,45 +1,36 @@
 package com.myboard.spring.core.vo.member;
 
-import java.util.List;
+import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+import com.myboard.spring.core.vo.board.BoardVO;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
 public class MemberVO {
-	private int mNum;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long mNum;
+
+	@Column(unique = true)
 	private String mId;
 	private String mName;
 	private String mPassword;
-	private List<String> authorities;
-	
-	
-	public int getmNum() {
-		return mNum;
-	}
-	public void setmNum(int mNum) {
-		this.mNum = mNum;
-	}
-	public String getmId() {
-		return mId;
-	}
-	public void setmId(String mId) {
-		this.mId = mId;
-	}
-	public String getmName() {
-		return mName;
-	}
-	public void setmName(String mName) {
-		this.mName = mName;
-	}
-	public String getmPassword() {
-		return mPassword;
-	}
-	public void setmPassword(String mPassword) {
-		this.mPassword = mPassword;
-	}
-	public List<String> getAuthorities() {
-		return authorities;
-	}
-	public void setAuthorities(List<String> authorities) {
-		this.authorities = authorities;
-	}
 
+	@OneToMany
+	@JoinColumn(name = "mNum")
+	private Set<BoardVO> boardList;
 
 }
