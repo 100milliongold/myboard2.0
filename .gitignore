@@ -1,0 +1,22 @@
+myboard/.gradle/*
+myboard/.idea/*
+myboard/.project/*
+myboard/.vscode/*
+myboard/.project/*
+myboard/.settings/*
+myboard/.project
+
+### Maven ###
+myboard/target/*
+myboard/pom.xml.tag
+myboard/pom.xml.releaseBackup
+myboard/pom.xml.versionsBackup
+myboard/pom.xml.next
+myboard/release.properties
+myboard/dependency-reduced-pom.xml
+myboard/buildNumber.properties
+myboard/.mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
+myboard/.mvn/wrapper/maven-wrapper.jar
+
+# End of https://www.toptal.com/developers/gitignore/api/maven
