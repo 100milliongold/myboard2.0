@@ -6,6 +6,12 @@ server:
     port: 8080
 
 spring:
+    redis:
+        host: localhost
+        port: 6379
+    profiles:
+        active: local
+        
     main:
         allow-bean-definition-overriding: true
     jpa:

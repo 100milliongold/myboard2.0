@@ -20,3 +20,7 @@ myboard/.mvn/timing.properties
 myboard/.mvn/wrapper/maven-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/maven
+
+### NPM ###
+front-end/node_modules/*
+front-end/package-lock.json
