@@ -1,9 +1,14 @@
 // styles
 import * as React from "react";
-import * as ReactDOM from "react-dom";
+import Index from "./containers/Index";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-const Root = () => {
-  return <div>test</div>;
+export const App = () => {
+  return (
+    <Router>
+      <Route path="/" component={Index} />
+    </Router>
+  );
 };
 
-ReactDOM.render(<Root />, document.getElementById("root"));
+export default App;

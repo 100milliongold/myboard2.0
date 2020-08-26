@@ -1,12 +1,13 @@
 // tools/base.js
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require("path");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const DashboardPlugin = require("webpack-dashboard/plugin");
 
 module.exports = {
   entry: {
     vendor: ["react", "react-dom"],
-    app: path.resolve(__dirname, "..", "src", "App.tsx"),
+    app: path.resolve(__dirname, "..", "src", "index.tsx"),
   },
   optimization: {
     splitChunks: {
@@ -33,6 +34,25 @@ module.exports = {
   },
   module: {
     rules: [
+      /**
+       * ESLINT
+       * First, run the linter.
+       * It's important to do this before Babel processes the JS.
+       * Only testing .ts and .tsx files (React code)
+       */
+      {
+        test: /\.(ts|tsx)$/,
+        enforce: "pre",
+        use: [
+          {
+            options: {
+              eslintPath: require.resolve("eslint"),
+            },
+            loader: require.resolve("eslint-loader"),
+          },
+        ],
+        exclude: /node_modules/,
+      },
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
@@ -50,6 +70,5 @@ module.exports = {
       template: "./public/index.html",
       filename: "./index.html",
     }),
-    new DashboardPlugin(),
   ],
 };
