@@ -30,23 +30,23 @@ public class Member {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long mNum;
+	private Long memberNum;
 
-	private String mEmail;
+	private String memberEmail;
 
 	@Column(unique = true)
-	private String mId;
+	private String memberId;
 
-	private String mPassword;
+	private String memberPassword;
 
-	private String mNickname;
+	private String memberNickname;
 
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = KOREA_TIME_ZONE)
-	private Date mLastLoginDate;
+	private Date memberLastLoginDate;
 
-	private Boolean mIsUsed;
+	private Boolean memberIsUsed;
 
 }

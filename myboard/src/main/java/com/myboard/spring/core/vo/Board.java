@@ -19,17 +19,17 @@ public class Board {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long bNum;
+	private Long boardNum;
 
-	private String bTitle;
+	private String boardTitle;
 
 	// 생성일자
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = KOREA_TIME_ZONE)
-	private Date bCreateDate;
+	private Date boardCreateDate;
 
-	private Boolean bIsUsed;
+	private Boolean boardIsUsed;
 
 }

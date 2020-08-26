@@ -1,31 +1,19 @@
 package com.myboard.spring.core.dao;
 
-import java.util.List;
-
+import com.myboard.spring.core.repository.MemberRepository;
 import com.myboard.spring.core.vo.Member;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class MemberDAO {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(MemberDAO.class);
+	@Autowired
+	private MemberRepository memberRepository;
 
-	public void register(Member member) {
-		return;
-	}
-
-	public void createAuthority(Member member) {
-	}
-
-	public Member getMember(String mId) {
-		return null;
-	}
-
-	public List<String> getAuthorities(Member member) {
-		return null;
+	public Member findByUsername(String id) {
+		return memberRepository.findByMemberId(id).get(0);
 	}
 
 }

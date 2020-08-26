@@ -26,19 +26,19 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long pNum;
+    private Long postNum;
 
-    private String pTitle;
+    private String postTitle;
 
     // 생성일자
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = KOREA_TIME_ZONE)
-    private Date pCreateDate;
+    private Date postCreateDate;
 
-    private Boolean pIsTop;
+    private Boolean postIsTop;
 
-    private Integer pViewNum;
+    private Integer postViewNum;
 
 }

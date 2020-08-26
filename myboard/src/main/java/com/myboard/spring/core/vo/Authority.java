@@ -18,11 +18,11 @@ public class Authority {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long aNum;
+    private Long authorityNum;
 
     // 권한 코드
-    private String aName;
+    private String authorityName;
 
     // 권한 설명
-    private String aContent;
+    private String authorityContent;
 }
