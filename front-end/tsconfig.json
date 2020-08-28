@@ -1,38 +1,25 @@
 {
   "compilerOptions": {
-    // leave JSX as it is
-    "jsx": "react",
-    // resolve modules as you would expect
-    "moduleResolution": "node",
-    // leave imports as they are
-    "module": "commonjs",
-    // do not transpile stuff like classes, async/await, ...
     "target": "es5",
-    "lib": ["es2015", "es6", "esnext", "dom"],
-    "esModuleInterop": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
-    // produce a source map
-    "sourceMap": true,
-    "baseUrl": ".",
-    "outDir": "dist",
-    "paths": {
-      "components/*": ["./src/components/*"],
-      "containers/*": ["./src/containers/*"],
-      "assets/*": ["./src/assets/*"],
-      "constants/*": ["./constants/*"],
-      "utils/*": ["./src/utils/*"]
-    },
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "keyofStringsOnly": true
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
   },
-  "include": ["./src/**/*"],
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest",
-    "src/setupTests.ts"
+  "include": [
+    "src"
   ]
 }
