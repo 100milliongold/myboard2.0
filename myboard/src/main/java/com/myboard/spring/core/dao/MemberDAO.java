@@ -12,8 +12,12 @@ public class MemberDAO {
 	@Autowired
 	private MemberRepository memberRepository;
 
-	public Member findByUsername(String id) {
+	public Member findByMemberId(String id) {
 		return memberRepository.findByMemberId(id).get(0);
+	}
+
+	public Member save(Member newUser) {
+		return memberRepository.save(newUser);
 	}
 
 }

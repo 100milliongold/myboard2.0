@@ -14,6 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -37,7 +38,12 @@ public class Member {
 	@Column(unique = true)
 	private String memberId;
 
+	@Column
 	private String memberPassword;
+
+	@Column
+	@JsonIgnore
+	private String token;
 
 	private String memberNickname;
 

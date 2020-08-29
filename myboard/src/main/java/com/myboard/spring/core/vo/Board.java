@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -30,6 +31,10 @@ public class Board {
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = KOREA_TIME_ZONE)
 	private Date boardCreateDate;
 
+	// 사용여부
 	private Boolean boardIsUsed;
+
+	@OneToMany(mappedBy = "board")
+	private List<Post> postList;
 
 }

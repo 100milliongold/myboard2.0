@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -40,5 +42,9 @@ public class Post {
     private Boolean postIsTop;
 
     private Integer postViewNum;
+
+    @ManyToOne
+    @JoinColumn(name = "board_num")
+    private Board board;
 
 }
