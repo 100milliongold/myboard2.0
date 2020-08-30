@@ -22,12 +22,9 @@ const Menu = styled("nav")`
       border-top: solid 1px rgba(210, 215, 217, 0.75);
       margin: 0.5em 0 0 0;
       padding: 0.5em 0 0 0;
-      & :first-child {
-        border-top: 0;
-        margin-top: 0;
-        padding-top: 0;
-      }
-      a, span : {
+
+      a,
+      span {
         border-bottom: 0;
         color: inherit;
         cursor: pointer;
