@@ -3,6 +3,8 @@ package com.myboard.spring.core.service;
 import java.util.Arrays;
 
 import com.myboard.spring.core.dao.MemberDAO;
+import com.myboard.spring.core.repository.JwtSessionRepository;
+import com.myboard.spring.core.vo.JwtSession;
 import com.myboard.spring.core.vo.Member;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class JwtUserDetailsService implements UserDetailsService {
 
 	@Autowired
 	private MemberDAO memberDAO;
+
+	@Autowired
+	private JwtSessionRepository jwtSessionRepository;
 
 	@Autowired
 	private PasswordEncoder bcryptEncoder;
@@ -43,8 +48,10 @@ public class JwtUserDetailsService implements UserDetailsService {
 
 	public void saveToken(String username, String token) {
 		Member user = memberDAO.findByMemberId(username);
-		user.setToken(token);
-		memberDAO.save(user);
+		// token 저장
+		// String memberId = user.getMemberId();
+		JwtSession jwtSession = JwtSession.builder().username(username).jwttoken(token).build();
+		jwtSessionRepository.save(jwtSession);
 	}
 
 }

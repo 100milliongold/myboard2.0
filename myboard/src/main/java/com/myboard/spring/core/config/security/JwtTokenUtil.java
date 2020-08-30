@@ -4,9 +4,14 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 
+import com.myboard.spring.core.repository.JwtSessionRepository;
+import com.myboard.spring.core.vo.JwtSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,6 +27,9 @@ public class JwtTokenUtil implements Serializable {
 	private static final long serialVersionUID = -2550185165626007488L;
 
 	public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
+
+	@Autowired
+	private JwtSessionRepository jwtSessionRepository;
 
 	@Value("${jwt.secret}")
 	private String secret;
@@ -63,8 +71,15 @@ public class JwtTokenUtil implements Serializable {
 
 	// validate token
 	public boolean validateToken(String jwtToken, UserDetails userDetails) {
-		final String username = getUsernameFromToken(jwtToken);
-		return (username.equals(userDetails.getUsername()) && !isTokenExpired(jwtToken));
+		// final String username = getUsernameFromToken(jwtToken);
+		// return (username.equals(userDetails.getUsername()) &&
+		// !isTokenExpired(jwtToken));
+
+		String username = userDetails.getUsername();
+		JwtSession session = jwtSessionRepository.findById(username).get();
+		String login_at_token = session.getJwttoken();
+
+		return (!isTokenExpired(jwtToken) && login_at_token.equals(jwtToken));
 	}
 
 	// check if the token has expired

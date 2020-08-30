@@ -41,10 +41,6 @@ public class Member {
 	@Column
 	private String memberPassword;
 
-	@Column
-	@JsonIgnore
-	private String token;
-
 	private String memberNickname;
 
 	@CreationTimestamp
