@@ -1,4 +1,4 @@
-package com.myboard.spring.core.config;
+package com.myboard.spring;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,6 +24,7 @@ public class EmbeddedRedisConfig {
     public void redisServer() throws IOException {
         redisServer = new RedisServer(redisPort);
         redisServer.start();
+        log.info("Embedded Redis Server Start! - {}", redisPort);
     }
 
     @PreDestroy

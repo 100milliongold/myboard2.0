@@ -1,7 +1,5 @@
-package com.myboard.spring.core.config;
+package com.myboard.spring;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Value;

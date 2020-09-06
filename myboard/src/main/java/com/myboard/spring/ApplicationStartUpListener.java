@@ -1,10 +1,9 @@
-package com.myboard.spring.core.config;
+package com.myboard.spring;
 
-import com.myboard.spring.core.repository.MemberRepository;
+import com.myboard.spring.core.member.MemberRepository;
 import com.myboard.spring.core.vo.Member;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Configuration;

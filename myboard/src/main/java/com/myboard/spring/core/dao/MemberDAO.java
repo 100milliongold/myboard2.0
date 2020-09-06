@@ -1,6 +1,6 @@
 package com.myboard.spring.core.dao;
 
-import com.myboard.spring.core.repository.MemberRepository;
+import com.myboard.spring.core.member.MemberRepository;
 import com.myboard.spring.core.vo.Member;
 
 import org.springframework.beans.factory.annotation.Autowired;

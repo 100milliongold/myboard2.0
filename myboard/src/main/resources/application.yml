@@ -2,8 +2,12 @@ mariaDB4j:
   databaseName: myboard
   port: 3306
 
+image:
+  default: https://static.productionready.io/images/smiley-cyrus.jpg
+
 jwt:
-  secret: javainuse
+  secret: nRvyYC4soFxBdZ-F-5Nnzz5USXstR1YylsTd-mA0aKtI9HUlriGrtkf-TiuDapkLiUCogO3JOK7kwZisrHp6wA
+  sessionTime: 86400
 
 server:
   port: 8080

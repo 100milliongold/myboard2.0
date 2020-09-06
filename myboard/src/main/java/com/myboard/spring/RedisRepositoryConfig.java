@@ -1,4 +1,4 @@
-package com.myboard.spring.core.config;
+package com.myboard.spring;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
